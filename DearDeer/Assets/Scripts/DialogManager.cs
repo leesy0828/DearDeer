@@ -4,6 +4,7 @@ using System.Data.Common;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static System.Net.WebRequestMethods;
 
 [System.Serializable]
 public class Dialog
@@ -20,9 +21,12 @@ public class DialogManager : MonoBehaviour {
     public static DialogManager instance;
 
 
-    void Start()
+    void Update()
     {
-        dialogBox.SetActive(true);
+        if (Input.GetMouseButtonDown(0))
+        {
+            dialogBox.SetActive(true);
+        }
     }
     void Awake()
     {
@@ -31,7 +35,7 @@ public class DialogManager : MonoBehaviour {
 
     public IEnumerator TypeDialog(string dialog)
     {
-        dialogtext.text = "";
+        dialogtext.text = "æ»≥Á«œººø‰";
         foreach (var character in dialog.ToCharArray())
             {
             dialogtext.text += character;
